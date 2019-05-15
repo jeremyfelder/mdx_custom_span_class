@@ -3,12 +3,12 @@
 
 from setuptools import setup
 setup(
-    name='mdx_customspanclass',
+    name='mdx-custom-span-class',
     version='1.1.1',
     author='Konrad Wasowicz',
     author_email='exaroth@gmail.com',
     description='Markdown extension which allows inserting span elements with custom class',
-    url='https://github.com/exaroth/mdx_custom_span_class',
+    url='https://github.com/wilhelmer/mdx_custom_span_class',
     py_modules=['mdx_custom_span_class'],
     install_requires=['Markdown>=2.0',],
     classifiers=[
