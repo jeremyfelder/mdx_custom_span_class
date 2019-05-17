@@ -36,7 +36,7 @@ pip install mdx-custom-span-class
 ```python
 import markdown
 
-md = markdown.Markdown(extensions=["custom_span_class"])
+md = markdown.Markdown(extensions=["custom-span-class"])
 md.convert("I love !!text-danger|spam!!")
 
 ```
