@@ -20,6 +20,7 @@ with custom class for a given text. Usage:
     >>> md.convert('i love !!   |spam!!')
     u'<p>i love !!   |spam!!</p>'
 
+If the | symbol causes conflicts with your Markdown tables, use ^ instead of |.
 copyright @2014 Konrad Wasowicz <exaroth@gmail.com>
 
 """
@@ -33,7 +34,7 @@ from markdown.preprocessors import Preprocessor
 from markdown.inlinepatterns import Pattern
 
 
-CUSTOM_CLS_RE = r'[!]{2}(?P<class>[^!]+)[|](?P<text>[^!]+)[!]{2}'
+CUSTOM_CLS_RE = r'[!]{2}(?P<class>[^!]+)[|\^](?P<text>[^!]+)[!]{2}'
 
 
 class CustomSpanClassExtension(Extension):

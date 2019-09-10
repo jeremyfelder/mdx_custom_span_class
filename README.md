@@ -14,6 +14,7 @@ The syntax is:
 ```
 !!<class name>|<text to be wrapped>!!
 ```
+
 For instance:
 
 ```shell
@@ -24,6 +25,8 @@ will return
 ```html
 <p>I love <span class="text-alert">spam</span></p>
 ```
+
+**Tip**: If the | symbol causes conflicts with your Markdown tables, use ^ instead of |.
 
 ### Installation
 

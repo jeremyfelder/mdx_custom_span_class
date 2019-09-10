@@ -4,7 +4,7 @@
 from setuptools import setup
 setup(
     name='mdx-custom-span-class',
-    version='1.1.2',
+    version='1.1.3',
     author='Konrad Wasowicz',
     author_email='exaroth@gmail.com',
     description='Markdown extension which allows inserting span elements with custom class',
