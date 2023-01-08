@@ -34,7 +34,7 @@ from markdown.preprocessors import Preprocessor
 from markdown.inlinepatterns import Pattern
 
 
-CUSTOM_CLS_RE = r'[!]{2}(?P<class>[^!]+)[|\^](?P<text>[^!]+)[!]{2}'
+CUSTOM_CLS_RE = r'[!]{2}(?P<class>.+?)[|\^](?P<text>.+?(?=[!]{2}))(?=(?P<lookahead>[!]{3}))?(?(lookahead)(?P<exclaim>!))[!]{2}'
 
 
 class CustomSpanClassExtension(Extension):
@@ -55,6 +55,9 @@ class CustomSpanClassPattern(Pattern):
 
         cls = matched.group("class")
         text = matched.group("text")
+        exclaim_ending = matched.group("exclaim")
+        if exclaim_ending is not None:
+            text += "!"
 
         elem = markdown.util.etree.Element("span")
         elem.set("class", cls)
